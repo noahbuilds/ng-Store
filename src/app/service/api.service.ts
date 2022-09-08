@@ -7,7 +7,7 @@ import { catchError, map, retry, throwError } from 'rxjs';
 })
 export class ApiService {
   constructor(private http: HttpClient) {}
-  productApi = 'http://fakestoreapi.com/products';
+  productApi = 'https://fakestoreapi.com/products';
 
   getProduct() {
     return this.http.get<object>(this.productApi).pipe(
