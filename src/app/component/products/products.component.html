@@ -1,0 +1,72 @@
+<div class="card-top container-fluid">
+  <div class="container d-flex">
+    <div class="item">
+      <a>
+        <img
+          src="https://static.vecteezy.com/system/resources/thumbnails/002/285/474/small/shopping-cart-with-goods-in-flat-modern-design-colored-icon-isolated-white-background-vector.jpg"
+          alt="img"
+        />
+        <h6>All products</h6>
+      </a>
+    </div>
+    <div class="item">
+      <a>
+        <img
+          src="https://img.freepik.com/premium-vector/shopping-man-with-packs-bags-guy-casual-clothes_87689-3823.jpg?w=360"
+          alt="img"
+        />
+        <h6>Men</h6>
+      </a>
+    </div>
+    <div class="item">
+      <a>
+        <img
+          src="https://i.pinimg.com/originals/f7/d3/fc/f7d3fcf4a10c5b1338d5a3637f81b25d.jpg"
+          alt="img"
+        />
+        <h6>Women</h6>
+      </a>
+    </div>
+    <div class="item">
+      <a>
+        <img
+          src="https://static.vecteezy.com/system/resources/previews/006/511/547/original/happy-man-and-woman-shopping-cartoon-character-set-vector.jpg"
+          alt="img"
+        />
+        <h6>Unisex</h6>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <ng-container *ngFor="let product of productList">
+      <div class="card col-md-3">
+        <img src="{{ product.image }} " alt="" />
+        <h5
+          style="
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100ch;
+          "
+        >
+          {{ product.title }}
+        </h5>
+        <p><strong>Price: </strong>${{ product.price }}</p>
+        <p
+          style="
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100ch;
+          "
+        >
+          {{ product.description }}
+        </p>
+        <button (click)="addToCart(product)" class="btn btn-primary">Add to cart</button>
+      </div>
+    </ng-container>
+  </div>
+</div>
